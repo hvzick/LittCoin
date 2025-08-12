@@ -1,66 +1,77 @@
-## Foundry
+# LittCoin ERC20 Token
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+LittCoin is an ERC20 token project built with [Foundry](https://book.getfoundry.sh/), using OpenZeppelin's secure contract library. This repository contains the smart contract, deployment scripts, and tests for LittCoin.
 
-Foundry consists of:
+## Contract Details
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Token Name:** LittCoin
+- **Symbol:** LITT
+- **Decimals:** 18
+- **Initial Supply:** 15,000 LITT (minted to deployer)
+- **Contract Address:** `0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e`
 
-## Documentation
+## Project Structure
 
-https://book.getfoundry.sh/
+- `src/LittCoin.sol` — Main ERC20 contract
+- `script/DeployLittCoin.s.sol` — Deployment script
+- `test/LittCoinTest.t.sol` — Foundry tests
 
-## Usage
+## Getting Started
 
-### Build
+### Prerequisites
 
-```shell
-$ forge build
+- [Foundry](https://book.getfoundry.sh/getting-started/installation.html) installed
+
+### Build Contracts
+
+```bash
+forge build
 ```
 
-### Test
+### Run Tests
 
-```shell
-$ forge test
+```bash
+forge test
 ```
 
-### Format
+### Deploy LittCoin
 
-```shell
-$ forge fmt
+Update the script or use your own RPC URL and private key:
+
+```bash
+forge script script/DeployLittCoin.s.sol:DeployLittCoin --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
 ```
 
-### Gas Snapshots
+The deployed contract address on the relevant network is:
 
-```shell
-$ forge snapshot
+```
+0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e
 ```
 
-### Anvil
+## Interacting with LittCoin
 
-```shell
-$ anvil
+You can interact with the contract using [Cast](https://book.getfoundry.sh/cast/), Etherscan, or any Ethereum wallet supporting custom tokens.
+
+### Example: Check Balance
+
+```bash
+cast call 0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e "balanceOf(address)" <your_address>
 ```
 
-### Deploy
+## Testing
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+Unit tests are provided in `test/LittCoinTest.t.sol` and cover:
+
+- Transfers
+- Approvals and allowances
+- Edge cases (reverts, zero address, etc.)
+
+Run all tests with:
+
+```bash
+forge test
 ```
 
-### Cast
+## License
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+MIT
