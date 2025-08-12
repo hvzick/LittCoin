@@ -8,7 +8,7 @@ LittCoin is an ERC20 token project built with [Foundry](https://book.getfoundry.
 - **Symbol:** LITT
 - **Decimals:** 18
 - **Initial Supply:** 15,000 LITT (minted to deployer)
-- **Contract Address:** `0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e`
+- **Contract Address:** [`0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e`](https://sepolia.etherscan.io/address/0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e)
 
 ## Project Structure
 
@@ -42,11 +42,10 @@ Update the script or use your own RPC URL and private key:
 forge script script/DeployLittCoin.s.sol:DeployLittCoin --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
 ```
 
-The deployed contract address on the relevant network is:
 
-```
-0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e
-```
+The deployed contract address on Sepolia:
+
+[`0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e`](https://sepolia.etherscan.io/address/0x61A398a48BD1eBF24913A63937E8b02dfF5cB68e)
 
 ## Interacting with LittCoin
 
